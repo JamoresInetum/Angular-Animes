@@ -1,0 +1,16 @@
+<h1>Animes</h1>
+<div *ngIf="animes.length <=5">Mensaje condicional al haber menos de 5 animes</div>
+<h2>{{mensaje}}</h2>
+<ul>
+    <!-- Muestra cada anime en un list item -->
+
+    <!-- la array animes la saca del .ts-->
+    <div *ngFor="let anime of animes">
+        <li *ngIf="anime.title !=undefined">
+            <h1>{{anime.title}}</h1> <br> 
+            <img src="{{anime.image}}" alt="{{anime.title}}">
+            <button (click)="borrarAnime(anime.title)">Eliminar</button>
+        </li>
+        
+    </div>
+</ul>
